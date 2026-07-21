@@ -21,6 +21,11 @@ type Student = {
   rating: number;
 };
 
+// 📞 Номер WhatsApp для кнопки «Получить консультацию».
+// Впиши свой номер в международном формате БЕЗ «+» и пробелов.
+// Пример: номер +7 700 123 45 67 записывается как "77001234567".
+const CONSULT_WHATSAPP = "77001234567";
+
 const STUDENTS: Student[] = [
   {
     id: 1,
@@ -456,12 +461,16 @@ export default function Home() {
                   <p className="mt-3 text-sm font-medium text-amber-600">
                     ★ {student.rating.toFixed(1)} · {t.students.rating}
                   </p>
-                  <button
-                    type="button"
-                    className="mt-5 w-full rounded-xl border border-teal-200 bg-teal-50 py-2.5 text-sm font-semibold text-teal-800 transition hover:bg-teal-100"
+                  <a
+                    href={`https://wa.me/${CONSULT_WHATSAPP}?text=${encodeURIComponent(
+                      `Здравствуйте! Пишу с сайта Adilet — хочу получить бесплатную консультацию у ${student.name}.`,
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 block w-full rounded-xl border border-teal-200 bg-teal-50 py-2.5 text-center text-sm font-semibold text-teal-800 transition hover:bg-teal-100"
                   >
                     {t.students.button}
-                  </button>
+                  </a>
                 </article>
               ))}
             </div>
