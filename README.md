@@ -26,13 +26,12 @@ The platform combines three core pillars to deliver immediate and reliable assis
 
 ---
 
-## 🏃‍♂️ How to Run Locally
+### 🏃 How to Run Locally
 
-1. Clone the repository and navigate into the project directory:
+1. Clone the repository, install dependencies, and start the local server:
    ```bash
    git clone [https://github.com/samirusham-dotcom/adiletstart.git](https://github.com/samirusham-dotcom/adiletstart.git)
    cd adiletstart
    npm install
-   ANTHROPIC_API_KEY=your_key_here
+   echo "ANTHROPIC_API_KEY=your_actual_api_key_here" > .env.local
    npm run dev
-   
